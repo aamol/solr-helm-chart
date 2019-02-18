@@ -5,6 +5,7 @@ apiVersion: "v1"
 kind: "Service"
 metadata:
   name: "{{ include "solr.exporter-name" . }}"
+  namespace: {{ .Values.namespace }}
   labels:
 {{ include "solr.common.labels" . | indent 4 }}
     component: "exporter"
@@ -27,6 +28,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "solr.exporter-name" . }}
+  namespace: {{ .Values.namespace }}
   labels:
 {{ include "solr.common.labels" . | indent 4 }}
     component: "exporter"

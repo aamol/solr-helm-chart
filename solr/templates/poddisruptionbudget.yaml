@@ -3,6 +3,7 @@ apiVersion: "policy/v1beta1"
 kind: "PodDisruptionBudget"
 metadata:
   name: "{{ template "solr.fullname" . }}"
+  namespace: {{ .Values.namespace }}
   labels:
 {{ include "solr.common.labels" . | indent 4 }}
 spec:

@@ -1,4 +1,6 @@
 ---
+# Namespace on which app should be dpeloyed
+namespace: default
 
 # Which port should solr listen on
 port: 8983
